@@ -51,6 +51,7 @@ table {
 
 /* general styling */
 
+
 :root {
 	--text-color: rgb(0, 0, 0);
 	--text-color-alt: rgb(255, 255, 255);
@@ -71,6 +72,10 @@ main {
 	margin: 0 8%;
 }
 
+h1 {
+	font-family: 'Rubik', serif;
+}
+
 /* --- */
 
 /* navbar */
@@ -78,16 +83,20 @@ main {
 nav {
 	position: fixed;
 	top: 0;
-	width: 100%;
+	/* width: 100%; */
 }
 
 nav > ul {
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 }
 
 nav > ul > li {
-	margin: 1em;
+	margin: 1em 0 1em 0;
+}
+
+nav > ul > li:not(:first-child) {
+	margin-left: 1em;
 }
 
 nav > ul a {
@@ -100,18 +109,17 @@ nav > ul a {
 /* header */
 
 header {
-	text-align: center;
 
-	padding: 5em 0;
+	padding: 8em 8% 2em 8%;
 
 	background-color: var(--background);
 }
 
 header > h1 {
 	font-size: 3em;
-	font-weight: 600;
+	font-weight: 900;
 
-	line-height: 1.5em;
+	line-height: 1em;
 }
 
 header > h2 {
@@ -127,44 +135,6 @@ header > h2 {
 	flex-wrap: wrap;
 }
 
-/* individuele vakken */
-#home section:nth-of-type(1) > article {
-	background-color: var(--background);
-
+#home section > article > picture img {
 	width: 100%;
-	padding: 1em 1em 2em 1em;
 }
-
-/* spacing tussen vakken */
-#home section:nth-of-type(1) > article:not(:first-child){
-	margin-top: 1em;
-}
-
-/* de sections in de vakken */
-#home section:nth-of-type(1) > article > section {
-	display: flex;
-	flex-direction: column;
-}
-
-/* titel */
-#home section:nth-of-type(1) > article > section:first-of-type > h3 {
-	font-size: 1.5em;
-	line-height: 1.6em;
-}
-
-/* afbeelding */
-#home section:nth-of-type(1) > article > section:last-of-type > img {
-	width: 100%;
-	margin: 2em 0;
-}
-
-/* link button */
-#home section:nth-of-type(1) > article > section:last-of-type > a {
-	background: var(--buttons);
-	padding: 1em 2em;
-	text-decoration: none;
-	color: var(--text-color-alt);
-	text-align: center;
-}
-
-/* --- */
