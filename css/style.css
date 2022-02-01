@@ -58,6 +58,9 @@ table {
 	--background: rgb(255, 98, 98) ;
 	--accent: rgb(98, 255, 106);
 	--buttons: rgb(114, 98, 255);
+
+	--stroke-dasharray: 0;
+	--stroke-dashoffset: 0;
 }
 
 body {
@@ -327,3 +330,18 @@ iframe {
 		
 	}
   }
+
+svg {
+    position: absolute;
+    right: 130px;
+    top: 150px;
+    z-index: 10;
+    height: 390%;
+
+
+}
+
+#path1 {
+	stroke-dasharray: var(--stroke-dasharray);
+	stroke-dashoffset: var(--stroke-dashoffset);
+}
