@@ -1,37 +1,49 @@
 // scroll drawing : https://css-tricks.com/scroll-drawing/
 
-let root = document.documentElement;
+setTimeout(() => {
+  let root = document.documentElement;
 
-var path = document.querySelector("#path1");
-console.log(path)
+  var path = document.querySelector("#path1");
+  console.log(path);
 
-var pathLength = path.getTotalLength();
+  var pathLength = path.getTotalLength();
 
-// path.style.strokeDasharray = pathLength + "" + pathLength;
+  console.log(pathLength);
 
-root.style.setProperty("--stroke-dasharray", pathLength + " " + pathLength);
+  // path.style.strokeDasharray = pathLength + "" + pathLength;
 
-// path.style.strokeDashoffset = pathLength;
+  root.style.setProperty("--stroke-dasharray", pathLength + " " + pathLength);
 
-root.style.setProperty("--stroke-dashoffset", pathLength  - 300)
+  // path.style.strokeDashoffset = pathLength;
 
-window.addEventListener("scroll", function(e){
-    
-    var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+  root.style.setProperty("--stroke-dashoffset", pathLength - 200);
 
-    console.log(scrollPercentage)
+  window.addEventListener("scroll", function (e) {
+    var scrollPercentage =
+      (document.documentElement.scrollTop + document.body.scrollTop) /
+      (document.documentElement.scrollHeight -
+        document.documentElement.clientHeight);
+
+    console.log(scrollPercentage);
 
     var drawLength = pathLength * scrollPercentage;
 
-    root.style.setProperty("--stroke-dashoffset", pathLength - drawLength - 300);
+    root.style.setProperty(
+      "--stroke-dashoffset",
+      pathLength - drawLength - 200
+    );
 
     // console.log(pathLength - drawLength)
 
     if (scrollPercentage >= 0.99) {
-        // path.style.strokeDasharray = "none";
-        root.style.setProperty("--stroke-dasharray", "none");
-    }else {
-        // path.style.strokeDasharray = pathLength + "" + pathLength;
-        root.style.setProperty("--stroke-dasharray", pathLength + " " + pathLength);
+      // path.style.strokeDasharray = "none";
+      root.style.setProperty("--stroke-dasharray", "none");
+    } else {
+      // path.style.strokeDasharray = pathLength + "" + pathLength;
+      root.style.setProperty(
+        "--stroke-dasharray",
+        pathLength + " " + pathLength
+      );
     }
-})
+  });
+}, 1000);

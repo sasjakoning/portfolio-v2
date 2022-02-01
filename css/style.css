@@ -59,8 +59,8 @@ table {
 	--accent: rgb(98, 255, 106);
 	--buttons: rgb(114, 98, 255);
 
-	--stroke-dasharray: 0;
-	--stroke-dashoffset: 0;
+	--stroke-dasharray: 866.18;
+	--stroke-dashoffset: 866.18;
 }
 
 body {
@@ -337,11 +337,20 @@ svg {
     top: 150px;
     z-index: 10;
     height: 390%;
-
-
 }
 
 #path1 {
 	stroke-dasharray: var(--stroke-dasharray);
 	stroke-dashoffset: var(--stroke-dashoffset);
+
+	animation: dash 1s ease-in-out forwards;
 }
+
+@keyframes dash {
+    from {
+      stroke-dashoffset: 866.16;
+    }
+    to {
+      stroke-dashoffset: var(--stroke-dashoffset);
+    }
+  }
