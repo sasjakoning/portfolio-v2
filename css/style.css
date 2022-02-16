@@ -386,6 +386,15 @@ footer > section > a {
 	z-index: 1;
 } */
 
+#projectPage > main > section:not(:nth-last-child(2)) > ul{
+	margin-bottom: 2em;
+}
+
+#projectPage > main > section:not(:nth-last-child(2)) > ul > li{
+	list-style-type: circle;
+	margin-left: 2em;
+}
+
 #projectPage > main > section:first-of-type {
 	color: var(--text-color);
 	margin-top: 3em;
@@ -404,7 +413,7 @@ footer > section > a {
 }
 
 #projectPage section > p {
-	margin-bottom: .5em;
+	margin-bottom: 1em;
 }
 
 iframe { 
