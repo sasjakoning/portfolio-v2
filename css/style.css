@@ -351,7 +351,7 @@ footer > section > a {
 /* project page */
 /****************/
 
-#projectPage header > section {
+/* #projectPage header > section {
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -364,9 +364,9 @@ footer > section > a {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-origin: center;
-}
+} */
 
-#projectPage header > section::before {
+/* #projectPage header > section::before {
 	content: "";
 	position: absolute;
 	background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
@@ -375,19 +375,36 @@ footer > section > a {
 	bottom: 0;
 
 	z-index: 0;
-}
+} */
 
-#projectPage header > section  > h1 {
+/* #projectPage header > section  > h1 {
 	font-size: 2em;
 	font-weight: 600;
 
-	color: var(--text-color-alt);
+	color: var(--text-color);
 
 	z-index: 1;
+} */
+
+#projectPage > main > section:first-of-type {
+	color: var(--text-color);
+	margin-top: 3em;
+
+	font-size: 2em;
+	font-weight: 600;
 }
 
 #projectPage section {
 	margin-top: 2em;
+}
+
+#projectPage section > h2 {
+	margin-bottom: .5em;
+	margin-top: 2em;
+}
+
+#projectPage section > p {
+	margin-bottom: .5em;
 }
 
 iframe { 
