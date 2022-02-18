@@ -70,6 +70,10 @@ table {
 	--stroke-dashoffset: 866.18;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	color: var(--text-color);
 
@@ -157,17 +161,17 @@ header > section > h1 {
 	font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
     word-break: break-word;
     max-width: 100%;
-    letter-spacing: .7em;
+    /* letter-spacing: .7em; */
     word-spacing: 100vw;
 	animation: wordspace 1s ease-in-out forwards;
 }
 
 /* title animation */
-@keyframes wordspace {
+/* @keyframes wordspace {
 	to{
 		letter-spacing: 0em;
 	}
-}
+} */
 
 #home header > section > h2 {
 	margin-top: .5em;
@@ -455,7 +459,7 @@ display: none;
 		display: block;
 		position: absolute;
 		right: -108px;
-		top: 30px;
+		top: 20px;
 		z-index: 0;
 		width: 75%;
 	}
