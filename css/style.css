@@ -269,23 +269,25 @@ header > section > h1 {
 }
 
 /* text inside block */
-#home section > figure > figcaption {
+#home section > figure  figcaption {
 	position: absolute;
 	bottom: 2em;
 	left: 1em;
 
+	max-width: 55%;
+
 	color: var(--text-color-alt);
 }
 
-#home section > figure > figcaption > h3 {
-	font-size: 1.2em;
+#home section > figure  figcaption > h3 {
+	font-size: 1em;
 }
 
-#home section > figure > figcaption > p {
+#home section > figure  figcaption > p {
 	font-size: .8em;
 }
 
-#home section > figure > figcaption > a {
+#home section > figure  figcaption > a {
 	font-size: .8em;
 
 	color: var(--text-color-alt);
@@ -438,6 +440,10 @@ display: none;
 	#home header > section{
 		margin: 8em auto auto auto;
 		max-width: 50em;
+	}
+
+	#home section > figure  figcaption > h3 {
+		font-size: 1.2em;
 	}
 
 	footer > *{
