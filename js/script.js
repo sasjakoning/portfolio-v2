@@ -3,11 +3,9 @@
 let root = document.documentElement;
 
 var path = document.querySelector("#path1");
-console.log(path);
 
 var pathLength = path.getTotalLength();
 
-console.log(pathLength);
 
 // path.style.strokeDasharray = pathLength + "" + pathLength;
 
