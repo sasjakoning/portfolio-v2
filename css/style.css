@@ -97,6 +97,10 @@ h2 {
 	font-weight: 700;
 }
 
+p {
+	line-height: 160%;
+}
+
 img { 
 	width: 100%;
 }
@@ -409,7 +413,7 @@ footer > section > a {
 	margin-left: 2em;
 }
 
-#projectPage > main > section:first-of-type {
+#projectPage > main > section:first-of-type, #VID > main > section:first-of-type {
 	color: var(--text-color);
 	margin-top: 3em;
 
@@ -417,16 +421,16 @@ footer > section > a {
 	font-weight: 600;
 }
 
-#projectPage section {
+#projectPage section, #VID section {
 	margin-top: 2em;
 }
 
-#projectPage section > h2 {
+#projectPage section > h2, #VID section > h2 {
 	margin-bottom: .5em;
 	margin-top: 2em;
 }
 
-#projectPage section > p {
+#projectPage section > p, #VID section > p {
 	margin-bottom: 1em;
 }
 
@@ -442,10 +446,60 @@ iframe {
 
 /* --- */
 
+/****************/
+/* VID page     */
+/****************/
+
+#VID section > article {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
+}
+
+#VID figure {
+	position: relative;
+	transition: .2s ease-in-out;
+	transform-origin: center bottom;
+}
+
+#VID figure > a > figcaption {
+	position: absolute;
+	bottom: 2em;
+	left: 1em;
+	color: var(--text-color-alt);
+
+	text-shadow: 3px 3px 3px rgba(0, 0, 0, .5);
+}
+
+
+#VID figure figcaption > h3 {
+	font-size: 1.2em;
+	margin-bottom: .5rem;
+}
+
+#VID figure figcaption > p {
+	font-size: 1em;
+}
+
+#VID figure:hover {
+	transform: scale(1.03);
+}
+
+
+
+/* --- */
+
 svg {
 display: none;
 }
 
+@media only screen and (max-width: 820px) {
+	#VID section > article {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		gap: 1rem;
+	}
+}
  
 
 @media only screen and (min-width: 820px) {
