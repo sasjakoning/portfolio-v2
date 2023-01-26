@@ -62,6 +62,7 @@ table {
 :root {
 	--text-color: rgb(0, 0, 0);
 	--text-color-alt: rgb(255, 255, 255);
+	--white: rgb(255, 255, 255);
 	--background: rgb(255, 98, 98) ;
 	--accent: red;
 	--buttons: rgb(114, 98, 255);
@@ -70,12 +71,18 @@ table {
 	--stroke-dashoffset: 866.18;
 }
 
+[data-theme="dark"] {
+	--text-color: rgb(255, 255, 255);
+	--text-color-alt: rgb(0, 0, 0);
+}
+
 html {
 	scroll-behavior: smooth;
 }
 
 body {
 	color: var(--text-color);
+	background-color: var(--text-color-alt);
 
 	width: 100%;
 
@@ -138,6 +145,29 @@ nav > ul > li:not(:first-child) {
 nav > ul a {
 	text-decoration: none;
 	color: var(--text-color);
+}
+
+.mode-switch {
+	display: flex;
+	gap: .5rem;
+	flex-grow: 1;
+	justify-content: flex-end;
+}
+
+.theme-switch {
+	background: url(../images/sun.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.dark-icon {
+	background: url(../images/moon.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.theme-switch > input {
+	opacity: 0;
 }
 
 /* --- */
@@ -249,6 +279,7 @@ header > section > h1 {
 	margin-top: 3em;
 	transition: .2s ease-in-out;
 	transform-origin: center bottom;
+	color: var(--white);
 }
 
 /* ::after for box shadow */
@@ -280,7 +311,7 @@ header > section > h1 {
 
 	max-width: 55%;
 
-	color: var(--text-color-alt);
+	color: var(--white);
 }
 
 #home section > figure  figcaption > h3 {
@@ -466,7 +497,7 @@ iframe {
 	position: absolute;
 	bottom: 2em;
 	left: 1em;
-	color: var(--text-color-alt);
+	color: var(--white);
 
 	text-shadow: 3px 3px 3px rgba(0, 0, 0, .5);
 }

@@ -4,7 +4,10 @@ let root = document.documentElement;
 
 var path = document.querySelector("#path1");
 
-var pathLength = path.getTotalLength();
+if(path){
+  var pathLength = path.getTotalLength();
+}
+
 
 
 // path.style.strokeDasharray = pathLength + "" + pathLength;
@@ -45,3 +48,41 @@ setTimeout(() => {
     }
   });
 }, 2500);
+
+
+// Dark/Light Mode
+
+const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+const toggleIcon = document.querySelector('.theme-switch');
+
+function switchTheme(e) {
+  if (e.target.checked) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+    toggleIcon.classList.add('dark-icon');
+  }
+  else {
+    document.documentElement.setAttribute('data-theme', 'light');
+    localStorage.setItem('theme', 'light');
+    toggleIcon.classList.remove('dark-icon');
+  }    
+}
+
+toggleSwitch.addEventListener('change', switchTheme, false);
+
+const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    console.log(currentTheme)
+    if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+        toggleIcon.classList.add('dark-icon');
+    }
+}
+
+// credit: https://dev.to/ananyaneogi/create-a-dark-light-mode-switch-with-css-variables-34l8
+
+
+
