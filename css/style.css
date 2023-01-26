@@ -104,6 +104,10 @@ h2 {
 	font-weight: 700;
 }
 
+h3 {
+	font-weight: bold;
+}
+
 p {
 	line-height: 160%;
 }
@@ -316,6 +320,7 @@ header > section > h1 {
 
 #home section > figure  figcaption > h3 {
 	font-size: 1em;
+	font-weight: 400;
 }
 
 #home section > figure  figcaption > p {
@@ -506,6 +511,7 @@ iframe {
 #VID figure figcaption > h3 {
 	font-size: 1.2em;
 	margin-bottom: .5rem;
+	font-weight: 400;
 }
 
 #VID figure figcaption > p {
@@ -551,6 +557,7 @@ display: none;
 
 	#home section > figure  figcaption > h3 {
 		font-size: 1.2em;
+		font-weight: 400;
 	}
 
 	footer > *{
