@@ -354,6 +354,27 @@ header > section > h1 {
 	width: 100%;
 }
 
+.VID-cat {
+	width: 100%;
+	height: 12rem;
+	background-color: black;
+	border: 2px solid white;
+}
+
+.VID-cat > a > div {
+	position: absolute;
+	right: -3rem;
+	bottom: 0rem;
+
+	width: 13rem;
+	aspect-ratio: 1/1;
+}
+
+.VID-cat > a > div > canvas {
+	width: 100%;
+	height: 100%;
+}
+
 /* --- */
 
 
@@ -493,6 +514,16 @@ iframe {
 	aspect-ratio: 1/1;
 }
 
+.img-group {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.img-group > picture {
+	flex-basis: 49.5%;
+}
+
 
 
 /* --- */
@@ -573,6 +604,27 @@ display: none;
 	#home section > figure  figcaption > h3 {
 		font-size: 1.2em;
 		font-weight: 400;
+	}
+
+	.VID-cat {
+		width: 100%;
+		height: 12rem;
+		background-color: black;
+		border: 2px solid white;
+	}
+	
+	.VID-cat > a > div {
+		position: absolute;
+		right: -3rem;
+		bottom: 0rem;
+	
+		width: 20rem;
+		aspect-ratio: 1/1;
+	}
+	
+	.VID-cat > a > div > canvas {
+		width: 100%;
+		height: 100%;
 	}
 
 	footer > *{

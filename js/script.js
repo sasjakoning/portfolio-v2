@@ -82,12 +82,31 @@ if (currentTheme) {
 
 // credit: https://dev.to/ananyaneogi/create-a-dark-light-mode-switch-with-css-variables-34l8
 
+// rive animation on index
+
+const earthCanvas = document.getElementById("earthCanvas");
+
+if(earthCanvas){
+
+  const earthRive = new rive.Rive({
+    src: "../images/visual-interface-design/the-fermi-paradox.riv",
+    canvas: earthCanvas,
+    autoplay: true,
+    stateMachines: "earth-states",
+    artboard: "earth",
+    fit: rive.Fit.cover,
+    onLoad: (_) => {
+      earthRive.resizeDrawingSurfaceToCanvas();
+  
+      const inputs = earthRive.stateMachineInputs("earth-states");
+
+    },
+  });
+
+}
+
 
 // interface - motion Rive animation
-
-window.addEventListener("resize", () => {
-  dogyRive.resizeDrawingSurfaceToCanvas();
-});
 
 const dogyCanvas = document.getElementById("dogyCanvas");
 
