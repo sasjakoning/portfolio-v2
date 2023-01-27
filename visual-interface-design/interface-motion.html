@@ -46,27 +46,94 @@
         <section>
             <h2>Description</h2>
             <p>
-                Interface & Motion was all about creating interactive and visual content for the web. 
+                Interface & Motion was all about creating interactive and visual content for the web. During this project I designed, animated and coded an interactable animation for the web.
             </p>
         </section>
 
         <section>
             <h2>Product</h2>
             <p>
-                text
+                Below you can view the video of the final product. I also included the link to the website where you can interact with the animation.
             </p>
+
+            <iframe src="https://www.youtube.com/embed/rYAc7LZLr1s" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+
+            <a href="https://sasjakoning.github.io/VID-interface-beweging/">Link to the animation demo</a>
+
 
         </section>
 
         <section>
             <h2>Process</h2>
             <p>
-                text
+                Before I began this task, I already had experience with animation. I had animated human characters, objects, and also bird-like characters in the past. It seemed interesting to me to animate a character with four legs this time so I chose to animate a dog. This has many fun animation options and offers a good challenge.
             </p>
             <picture>
-                <source type="image/jpg" srcset="../images/visual-interface-design/interface-interaction/donald.jpg" />
-                <img src="../images/visual-interface-design/interface-interaction/donald.jpg" alt="" />
+                <source type="image/jpg" srcset="../images/visual-interface-design/interface-motion/sketches.jpg" />
+                <img src="../images/visual-interface-design/interface-motion/sketches.jpg" alt="" />
             </picture>
+
+            <p>I decided to design the dog to look like my real-life dog, Fellow. He's a three year old Boxer who's full of energy and loves to play.</p>
+
+            <picture>
+                <source type="image/jpg" srcset="../images/visual-interface-design/interface-motion/dog-design.jpg" />
+                <img src="../images/visual-interface-design/interface-motion/dog-design.jpg" alt="" />
+            </picture>
+
+            <p>I was going to animate the character using a skeleton technique which means I wont have to redraw every frame of each animation. Using a skeleton meant I had to break the character up in different parts that can overlap and move without it looking strange.</p>
+
+            <picture>
+                <source type="image/jpg" srcset="../images/visual-interface-design/interface-motion/parts.jpg" />
+                <img src="../images/visual-interface-design/interface-motion/parts.jpg" alt="" />
+            </picture>
+
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <p>
+                My favorite program for bone-based animation is Dragonbones. However, this software is starting to become outdated and is no longer being developed. For that reason, I had decided to switch to different software.
+
+                There were a number of options with their own pros and cons.
+            </p>
+
+            <h3>Spine</h3>
+            <p>
+                Spine is the best software when it comes to character animation (mainly for games) based on bones. However, the basic package of Spine costs 80 euros, and when you want more options, one of which is Meshes (meshes are essential in my workflow), you have to pay over 300 euros. So that's not an option.
+            </p>
+
+            <h3>After Effects</h3>
+            <p>
+                In After Effects it is possible to work with bones to create animations as well. However, After Effects works (to my taste) a bit "clunky" with it. It doesn't feel smooth to use and with lesser hardware, After Effects is not pleasant to use. When using After Effects you're also dependand on paid software.
+            </p>
+
+            <h3>Rive</h3>
+            <p>
+                Rive is an open-source web-based animation app specifically made for the web. I have tried this once before but abandoned it because it did not have all the features I expected. Nowadays, Rive is much more developed and has almost all the functions that Dragonbones and Spine also have. You can also work well with states and interactions such as hovers and clicks, and there is a complete API in which animations can be easily placed with the canvas element in html. Ideal for this task.
+
+                In the end, I decided to switch to Rive. In this way, I not only gain more experience with animation, but I also learn new software that I can use more often in the future.
+            </p>
+
+            <p>Because I used Rive, I'm able to use the animations I made easily on the web.</p>
+
+            <div class="dog-btns">
+                <div>
+                    <canvas id="btnPlayCanvas" width="100" height="100"></canvas>
+                </div>
+                <div>
+                    <canvas id="btnCatchCanvas" width="100" height="100"></canvas>
+                </div>
+                <div>
+                    <canvas id="btnWalkCanvas" width="100" height="100"></canvas>
+                </div>
+            </div>
+
+            <div class="dogContainer">
+                <canvas id="dogyCanvas" width="1000" height="1000"></canvas>
+            </div>
 
         </section>
 
@@ -90,6 +157,7 @@
           </section>
     </footer>
 
+    <script src="https://unpkg.com/@rive-app/canvas@1.0.79"></script>
     <script src="../js/script.js"></script>
 </body>
 

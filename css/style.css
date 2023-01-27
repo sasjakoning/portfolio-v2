@@ -480,6 +480,21 @@ iframe {
 	margin: .5em 0;
 }
 
+#projectPage main canvas {
+	width: 100%;
+}
+
+.dog-btns {
+	display: flex;
+	justify-content: space-between;
+}
+
+.dog-btns > canvas {
+	aspect-ratio: 1/1;
+}
+
+
+
 /* --- */
 
 /****************/
