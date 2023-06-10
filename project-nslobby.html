@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+    <link rel="icon" type="image/png" sizes="16x16"  href="/images/favicon.png">
+</head>
+
+<body id="projectPage">
+    <header>
+        <nav>
+            <ul>
+              <li>
+                <a href="../index.html">Home</a>
+              </li>
+              <li>
+                <a href="../index.html#about">About</a>
+              </li>
+              <li>
+                <a href="../index.html#contact">Contact</a>
+              </li>
+              <li class="mode-switch">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                </label>
+            </li>
+            </ul>
+          </nav>
+
+    </header>
+
+    <main>
+        <section>
+            <h1>NS lobby</h1>
+        </section>
+        <section>
+            <h2>Description</h2>
+            <p>
+                NS Lobby is a multi-user lobby where that users can join when they're waiting for their train to depart. Users can fill in their name and move their player around a virtual train station. This makes for a fun way to kill time while waiting for your train.
+            </p>
+            <p>
+                This project was part of the Minor Web Design & Development at the HvA. The goal of this project was to create a live connection between the client, server and other users and to send real time data both ways at the same time.
+            </p>
+        </section>
+
+        <section>
+            <h2>Goals / Learning Objectives</h2>
+            <p>
+                There were a couple of goals I wanted to achieve during this project.
+            </p>
+
+            <ul>
+                <li>Deal with real time complexity</li>
+                <li>Handle real time client-server interaction</li>
+                <li>Handle real time data management</li>
+                <li>Handle multi user support</li>
+                <li>Move characters(DOM elements) through a space in real time</li>
+                <li>Pull accurate data from the NS(Nederlandse Spoorwegen) API</li>
+                <li>Animate characters and give them skins using <a href="https://rive.app/">Rive</a></li>
+            </ul>
+
+            <h2>Process</h2>
+
+            <h3>Flowchart</h3>
+            <p>
+                To create a better idea of what happens within the app, I made a flowchart that describes all functions.
+            </p>
+            <p>
+                This flowchart is based on one of the earlier iterations of the app. The final version of the app may have a different flow. I created this chart mainly to give myself, as a developer, a better understanding of what happens within the app.
+            </p>
+
+            <picture>
+                <source type="image/jpg" srcset="images/nslobby/flowchart.jpg" />
+                <img src="images/nslobby/flowchart.jpg" alt="" />
+            </picture>
+            
+
+            <h3>Data Model API</h3>
+
+            <p>
+                For this project I decided to use the NS(Nederlandse Spoorwegen) API. This API provides data about the Dutch railways. My general idea for the app was to create a lobby of sorts in which users could move their character around. The NS API proved to be a good fit for this idea and inspired me to create a lobby where users can move around a train station while they wait for their train to arrive.
+            </p>
+
+            <p>
+                By sending a request to the API, you can get data about the stations and trains. In my case the only data relevant to me were the specific station and its upcoming departures. I created a data model to get a better understanding of the data I would get back from the API and what data I'd want to use in the app.
+            </p>
+
+            <picture>
+                <source type="image/jpg" srcset="images/nslobby/data-model.jpg" />
+                <img src="images/nslobby/data-model.jpg" alt="" />
+            </picture>
+
+            <h3>Lifecycle Diagram</h3>
+
+            <p>
+                The data lifecycle diagram describes the flow of data within the app. It shows emits and listeners for socket events and how the data is handled and what it sends back.
+            </p>
+
+            <picture>
+                <source type="image/jpg" srcset="images/nslobby/data-lifecycle.jpg" />
+                <img src="images/nslobby/data-lifecycle.jpg" alt="" />
+            </picture>
+
+            <h3>Character design/animation</h3>
+
+            <p>
+                For the player movement I created idle and walk animations in all four directions. I used a mix of bone-based and frame-by-frame animation to get the desired result. To make these animations I used Rive. By using Rive I'm able to create bone-based animations and add input based logic to trigger animations on the web.
+            </p>
+
+            <div class="img-group">
+                <picture>
+                    <source type="image/jpg" srcset="images/nslobby/animations.gif" />
+                    <img src="images/nslobby/animations.gif" alt="" />
+                </picture>
+            </div>
+
+        </section>
+
+        <section>
+            <h2>Final version</h2>
+
+            <p>
+                The final version of the app is a multi-user lobby where that users can join when they're waiting for their train to depart. Users can fill in their name and move their player around a virtual train station. This makes for a fun way to kill time while waiting for your train.
+            </p>
+
+            <iframe src="https://www.youtube.com/embed/x2KY4A610Lw" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </section>
+
+        <section>
+            <h2>Software</h2>
+            <ul>
+                <li>Photoshop</li>
+                <li>Rive</li>
+                <li>Visual Studio Code</li>
+            </ul>
+            <h2>Languages</h2>
+            <ul>
+                <li>HTML/Handlebars</li>
+                <li>CSS</li>
+                <li>Javascript</li>
+            </ul>
+            <h2>Tools</h2>
+            <ul>
+                <li>Node.js</li>
+                <li>Socket.io</li>
+                <li>Express</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Github</h2>
+            <p>This project has been documented on Github.</p>
+
+            <a class="github" href="https://github.com/sasjakoning/real-time-web-2223">Github page</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <h3>Contact</h3>
+        <section>
+            <a href="https://www.linkedin.com/in/sasja-koning/">LinkedIn</a>
+            <a href="https://www.instagram.com/sasjakoning/">Instagram</a>
+            <a href="https://github.com/sasjakoning">Github</a>
+            <a href="mailto:sasjakoning@hotmail.com">sasjakoning@hotmail.com</a>
+          </section>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

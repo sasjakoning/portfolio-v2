@@ -106,6 +106,7 @@ h2 {
 
 h3 {
 	font-weight: bold;
+	margin-bottom: .5rem;
 }
 
 p {
@@ -307,6 +308,11 @@ header > section > h1 {
 	transform: scale(1.03);
 }
 
+#home section > figure > a {
+	display: block;
+	height: 100%;
+}
+
 /* text inside block */
 #home section > figure  figcaption {
 	position: absolute;
@@ -359,6 +365,7 @@ header > section > h1 {
 	height: 12rem;
 	background-color: black;
 	border: 2px solid white;
+	margin-top: 4rem !important;
 }
 
 .VID-cat > a > div {
@@ -611,6 +618,7 @@ display: none;
 		height: 12rem;
 		background-color: black;
 		border: 2px solid white;
+		margin-top: 5rem !important;
 	}
 	
 	.VID-cat > a > div {
