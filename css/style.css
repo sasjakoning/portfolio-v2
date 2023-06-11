@@ -4,8 +4,8 @@
 */
 
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
+h1, h2, h3, h4, h5, h6, p, blockquote,
+a, abbr, acronym, address, big, cite,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
@@ -45,6 +45,22 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+pre {
+	font-family: "Courier New", Courier, monospace;
+	background-color: var(--text-color);
+	color: var(--text-color-alt);
+	/* white-space: pre-line; */
+	word-break: break-all;
+	padding-left: 2rem;
+}
+
+code {
+	font-family: "Courier New", Courier, monospace;
+	background-color: var(--text-color);
+	color: var(--text-color-alt);
+	padding: .2rem .1rem;
 }
 
 /*****************/
@@ -88,11 +104,12 @@ body {
 
 	font-family: "poppins", sans-serif;
 
-	font-size: 14px;
+	font-size: 16px;
 }
 
 main {
-	margin: 0 8%;
+	margin: 0 1rem;
+	overflow-x: hidden;
 }
 
 h1, h2 {
@@ -128,7 +145,7 @@ img {
 nav {
 	position: fixed;
 	top: 0;
-	width: 100%;
+	width: 100dvw;
 	background-color: var(--text-color-alt);
 
 	z-index: 100;
@@ -136,7 +153,9 @@ nav {
 
 nav > ul {
 	display: flex;
-	margin-left: 8%;
+	width: calc(100% - 2rem);
+	margin: 1rem;
+	justify-content: center;
 }
 
 nav > ul > li {
@@ -194,7 +213,7 @@ nav > ul a {
 }
 
 header > section > h1 {
-    font-size: 3em;
+    font-size: 2.5em;
     font-weight: 900;
     line-height: 1.1em;
 	font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
@@ -250,7 +269,7 @@ header > section > h1 {
 	display: flex;
 	flex-wrap: wrap;
 
-	margin-top: 15em;
+	margin-top: 10em;
 }
 
 #home section {
@@ -360,12 +379,16 @@ header > section > h1 {
 	width: 100%;
 }
 
+.generic-cat {
+	margin-top: 5rem !important;
+}
+
 .VID-cat {
 	width: 100%;
 	height: 12rem;
 	background-color: black;
 	border: 2px solid white;
-	margin-top: 4rem !important;
+	margin-top: 5rem !important;
 }
 
 .VID-cat > a > div {
@@ -377,9 +400,25 @@ header > section > h1 {
 	aspect-ratio: 1/1;
 }
 
-.VID-cat > a > div > canvas {
+.sleepydragon-cat > a > div {
+	position: absolute;
+	right: -2rem;
+	bottom: 0rem;
+
+	width: 12rem;
+	aspect-ratio: 1/1;
+}
+
+.VID-cat > a > div > canvas, .sleepydragon-cat > a > div > canvas {
 	width: 100%;
 	height: 100%;
+}
+
+.sleepydragon-cat {
+	width: 100%;
+	height: 12rem;
+	background: linear-gradient(90deg, #292eac 0%, #5C8AFF 100%);
+	margin-top: 4rem !important;
 }
 
 /* --- */
@@ -596,6 +635,7 @@ display: none;
 	main {
 		margin: auto;
 		max-width: 50em;
+		overflow: visible;
 	}
 
 	nav > ul {
@@ -613,12 +653,16 @@ display: none;
 		font-weight: 400;
 	}
 
+	.sleepydragon-cat {
+		margin-top: 7rem !important;
+	}
+
 	.VID-cat {
 		width: 100%;
 		height: 12rem;
 		background-color: black;
 		border: 2px solid white;
-		margin-top: 5rem !important;
+		margin-top: 8rem !important;
 	}
 	
 	.VID-cat > a > div {
@@ -633,6 +677,15 @@ display: none;
 	.VID-cat > a > div > canvas {
 		width: 100%;
 		height: 100%;
+	}
+
+	.sleepydragon-cat > a > div {
+		position: absolute;
+		right: 0rem;
+		bottom: 0rem;
+	
+		width: 15rem;
+		aspect-ratio: 1/1;
 	}
 
 	footer > *{

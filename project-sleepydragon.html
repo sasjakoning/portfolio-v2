@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+    <link rel="icon" type="image/png" sizes="16x16"  href="/images/favicon.png">
+</head>
+
+<body id="projectPage">
+    <header>
+        <nav>
+            <ul>
+              <li>
+                <a href="../index.html">Home</a>
+              </li>
+              <li>
+                <a href="../index.html#about">About</a>
+              </li>
+              <li>
+                <a href="../index.html#contact">Contact</a>
+              </li>
+              <li class="mode-switch">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                </label>
+            </li>
+            </ul>
+          </nav>
+
+    </header>
+
+    <main>
+        <section>
+            <h1>Sleepy Dragon</h1>
+        </section>
+        <section>
+            <h2>Description</h2>
+            <p>
+                Sleepy Dragon is a mobile single page app that fetches random stories from an API that can be read.
+            </p>
+            <p>
+                This project was part of the Minor Web Design & Development at the HvA. During three weeks of the course Web App From Scratch, I have designed and developed a Single Page App(SPA) based on a self-chosen user story. This SPA is based on data fetched from an API.
+
+                The project is written in vanilla HTML, CSS and JS.
+            </p>
+        </section>
+
+        <section>
+            <h2>User story</h2>
+
+            <p>The user story for this project is as follows:</p>
+            <q>"As a parent, I want to find random short stories to entertain my child before bedtime so I don't have to continuously search for new stories."</q>
+
+            <h2>Primary functions</h2>
+            <p>
+                There are a few primary functions in this app. The user can:
+            </p>
+
+            <ul>
+                <li>Read a random story</li>
+                <li>Like/Save a story</li>
+                <li>Read a story that has been saved</li>
+            </ul>
+
+            <h2>Flowchart</h2>
+
+            <p>
+                In order to get the structure and functionality of the app properly set up, I created a flowchart that show the different states and functions that can be used.
+            </p>
+
+            <picture>
+                <source type="image/jpg" srcset="images/sleepydragon/flowchart.jpg" />
+                <img src="images/sleepydragon/flowchart.jpg" alt="" />
+            </picture>
+
+            <h2>Wireframes and design</h2>
+
+            <p>
+                I made several wireframes for the app. I wanted to make sure that the app was easy to use and that the user could easily find the functions they wanted to use.
+            </p>
+
+            <picture>
+                <source type="image/jpg" srcset="images/sleepydragon/wireframes.jpg" />
+                <img src="images/sleepydragon/wireframes.jpg" alt="" />
+            </picture>
+
+            <p>
+                I wanted the app to look friendly and child focussed. Even though the app wont specifically be used by children(But their parents), I wanted to make sure that the app would be appealing to them.
+            </p>
+
+            <p>
+                I made several versions of the app design. It didn't take long for me to figure out which colors I wanted to use but the actual layout and detail of the design took me a bit longer. After showing the iterations to my peers I got some good feedback and was able to improve the design.
+            </p>
+
+            <picture>
+                <source type="image/jpg" srcset="images/sleepydragon/designs-iterations.jpg" />
+                <img src="images/sleepydragon/designs-iterations.jpg" alt="" />
+            </picture>
+
+            <h2>Mascot</h2>
+
+            <p>
+                The primary audience of this app is children. To make the app more fun and appealing to children, I have created a mascot for the app. The mascot is a dragon that is called Sleepy and is used in the logo and in the app itself.
+            </p>
+
+            <p>
+                The dragon is designed in Photoshop and animated in <a href="https://rive.app/">Rive</a>
+            </p>
+
+            <div class="img-group">
+                <picture>
+                    <source type="image/jpg" srcset="images/sleepydragon/dragon-1.gif" />
+                    <img src="images/sleepydragon/dragon-1.gif" alt="" />
+                </picture>
+                <picture>
+                    <source type="image/jpg" srcset="images/sleepydragon/dragon-2.gif" />
+                    <img src="images/sleepydragon/dragon-2.gif" alt="" />
+                </picture>
+            </div>
+
+            <h2>Web components</h2>
+
+            <p>
+                I discovered that there is a native way to use components in Javascript instead of applying frameworks. This caught my interest and I decided to do more research on it. As it turned out, generally people use webcomponents and then apply bare text as html which sits inside the javascript file like so:
+            </p>
+
+<pre>
+<code>
+const template = document.createElement('template');
+template.innerHTML = `
+    &lt;style&gt;
+        h1 {
+        color: red;
+        }
+    &lt;/style&gt;
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+`;
+</code>
+</pre>
+
+            <p>
+                This however, defeated the purpose of using web components for me. I wanted to be able to use seperate HTML and CSS files for my components. I found a way to do this by using the <code>fetch()</code> function to get the HTML and CSS files and then applying them to the component. The code I used to do this is a little complex but comes down this: I create a variable that has the list of html templates that I want to insert. I run a function that fetches these files and create new components for each of them using names that are stated within the html files themselves. I can then append these to the DOM by simply using <code>document.createElement("template-name")</code>. In case there is content that needs to be inserted into the component, I can call these using <code>element.shadowRoot.querySelector( '[slot="slot-name"]');</code> and then insert the content using <code>element.textContent</code>.
+            </p>
+
+            <p>
+                I'm quite happy with what I learned about web components and how I applied them to this project. In practice I probably won't be using them as much as I did in this project, but it was a fun learning experience and gave me more understanding about how frameworks like React and Vue work.
+            </p>
+
+        </section>
+
+        <section>
+            <h2>Final version</h2>
+
+            <p>
+                I'm quite happy with the result of this project. Being able to create a web app from scratch and figure out the basics of Javascript frameworks helped me get a better view on how web development works. I'm also happy with the design of the app. I think it's a good balance between playful and easy to handle. There are some major things I learned which include the use of web components, templates, hashes, routes and modules. I also got some more practice in implementing Rive animations.
+            </p>
+
+            <iframe src="https://www.youtube.com/embed/8K8vvHagBew" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </section>
+
+        <section>
+            <h2>Software</h2>
+            <ul>
+                <li>Photoshop</li>
+                <li>Rive</li>
+                <li>Visual Studio Code</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Github</h2>
+            <p>This project has been documented on Github.</p>
+
+            <a class="github" href="https://github.com/sasjakoning/Sleepy-Dragon-WAFS">Github page</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <h3>Contact</h3>
+        <section>
+            <a href="https://www.linkedin.com/in/sasja-koning/">LinkedIn</a>
+            <a href="https://www.instagram.com/sasjakoning/">Instagram</a>
+            <a href="https://github.com/sasjakoning">Github</a>
+            <a href="mailto:sasjakoning@hotmail.com">sasjakoning@hotmail.com</a>
+          </section>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

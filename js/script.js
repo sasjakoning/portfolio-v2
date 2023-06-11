@@ -97,8 +97,25 @@ if(earthCanvas){
     fit: rive.Fit.cover,
     onLoad: (_) => {
       earthRive.resizeDrawingSurfaceToCanvas();
-  
-      const inputs = earthRive.stateMachineInputs("earth-states");
+
+    },
+  });
+
+}
+
+const sleepyCanvas = document.getElementById("sleepyCanvas");
+
+if(sleepyCanvas){
+
+  const sleepyRive = new rive.Rive({
+    src: "../images/sleepydragon/sleepy_dragon.riv",
+    canvas: sleepyCanvas,
+    autoplay: true,
+    stateMachines: "dragon-loading",
+    artboard: "dragon-loading",
+    fit: rive.Fit.cover,
+    onLoad: (_) => {
+      sleepyRive.resizeDrawingSurfaceToCanvas();
 
     },
   });
